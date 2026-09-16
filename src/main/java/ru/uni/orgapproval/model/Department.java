@@ -1,9 +1,6 @@
 package ru.uni.orgapproval.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Department {
     private final String name;
@@ -14,10 +11,14 @@ public class Department {
 
     public Department(String name, Department parent){
         this.name = Objects.requireNonNull(name, "name не может быть null");
-        this.parent=parent;
+        this.parent = parent;
         this.employees = new ArrayList<>();
         this.children = new ArrayList<>();
         this.head = null;
+
+        if (parent != null) {
+            parent.children.add(this);
+        }
     }
 
     public String getName() {
@@ -43,6 +44,10 @@ public class Department {
         this.head = head;
     }
     public void setParent(Department parent) {
+        if (parent == this) {
+            throw new IllegalArgumentException("Отдел не может быть родителем самого себя!");
+        }
+
         this.parent = parent;
     }
 
@@ -65,5 +70,31 @@ public class Department {
                 ", employees=" + employees.size() +
                 ", children=" + children.size() +
                 '}';
+    }
+
+    public Optional<Employee> findManagerAbove(int levelsUp){
+        if (levelsUp < 0) {
+            throw new IllegalArgumentException("Уровень не может быть отрицательным: " + levelsUp);
+        }
+
+        Department cur = this;
+
+        for (int i = 0; i < levelsUp; i++) {
+            cur = cur.getParent();
+
+            if (cur == null) {
+                return Optional.empty();
+            }
+        }
+
+        return Optional.ofNullable(cur.getHead());
+    }
+
+    public List<Employee> getAllSubordinates() {
+        List<Employee> subordinates = new ArrayList<>();
+            subordinates.addAll(employees);
+            this.getChildren().forEach(c -> subordinates.addAll
+                    (c.getAllSubordinates()));
+            return  Collections.unmodifiableList(subordinates);
     }
 }
