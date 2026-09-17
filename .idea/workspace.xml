@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/DepartmentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="+ методы findManagerAbove, getAllSubordinates и тесты к ним">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/document/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/document/DocumentStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,90 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kringe-322&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kringe-322/OOP-task1.git&quot;,
+    &quot;accountId&quot;: &quot;7562e2ee-30e4-400c-a095-417df22fefbd&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000010010882954" />
+      <entry key="MS500" value="1.0665161899002893" />
+      <entry key="S2" value="1.7924914555051008" />
+      <entry key="S5" value="2.6324301418922627" />
+      <entry key="S10" value="3.262288522822015" />
+      <entry key="S30" value="4.447054025644967" />
+      <entry key="S60" value="5.458905739601" />
+      <entry key="M2" value="7.403400510502173" />
+      <entry key="M5" value="14.18265841743953" />
+      <entry key="M10" value="24.78653338989139" />
+      <entry key="M15" value="32.31436809732742" />
+      <entry key="M30" value="44.1019467504211" />
+      <entry key="H1" value="52.41757287793473" />
+      <entry key="H2" value="57.38710072065195" />
+      <entry key="H4" value="60.10774438449368" />
+      <entry key="D1" value="62.5055522117069" />
+      <entry key="W1" value="62.92905422387527" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="9.429124326776348E-40" />
+      <entry key="MS500" value="1.566920798622764E-8" />
+      <entry key="S2" value="0.013093008175879745" />
+      <entry key="S5" value="0.28335217136153196" />
+      <entry key="S10" value="0.8998981427358093" />
+      <entry key="S30" value="2.2704597808208766" />
+      <entry key="S60" value="3.176086121846082" />
+      <entry key="M2" value="4.21723154976632" />
+      <entry key="M5" value="6.967485219992248" />
+      <entry key="M10" value="10.175762247753148" />
+      <entry key="M15" value="12.023463801857185" />
+      <entry key="M30" value="14.537341618337049" />
+      <entry key="H1" value="16.127908972525475" />
+      <entry key="H2" value="17.02550753828926" />
+      <entry key="H4" value="17.5026998601191" />
+      <entry key="D1" value="17.915680973924044" />
+      <entry key="W1" value="17.987918740879568" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.06250000124604217" />
+      <entry key="MS500" value="0.5914333106302613" />
+      <entry key="S2" value="1.423157472617726" />
+      <entry key="S5" value="2.57585476331399" />
+      <entry key="S10" value="3.857191664284734" />
+      <entry key="S30" value="6.489001048031421" />
+      <entry key="S60" value="8.470674680148244" />
+      <entry key="M2" value="11.50586177283888" />
+      <entry key="M5" value="21.070366151780565" />
+      <entry key="M10" value="34.90323196485856" />
+      <entry key="M15" value="44.290965012403035" />
+      <entry key="M30" value="58.610650545425315" />
+      <entry key="H1" value="68.52948338819888" />
+      <entry key="H2" value="74.40412955639972" />
+      <entry key="H4" value="77.60607664008278" />
+      <entry key="D1" value="80.420486678363" />
+      <entry key="W1" value="80.91686585574817" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -28,21 +109,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.OOP-task1 [test].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/tasks/OOP-task1/pom.xml",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.DepartmentTest.testFindManagerAbove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DepartmentTest.testFindManagerAboveNegativeLevelThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DepartmentTest.testGetAllSubordinates.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.OOP-task1 [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/tasks/OOP-task1/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.DepartmentTest.testGetAllSubordinates">
     <configuration name="DepartmentTest.testFindManagerAbove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-task1" />
@@ -91,5 +175,9 @@
       <updated>1789594912865</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="+ методы findManagerAbove, getAllSubordinates и тесты к ним" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ методы findManagerAbove, getAllSubordinates и тесты к ним" />
   </component>
 </project>

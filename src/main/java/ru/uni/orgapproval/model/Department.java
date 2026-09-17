@@ -63,6 +63,18 @@ public class Department {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if(obj == null || getClass() != obj.getClass()) return false;
+        Department that = (Department) obj;
+        return Objects.equals(name, that.name);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
+
+    @Override
     public String toString() {
         return "Department{"+
                 "name=" +'\''+name+ '\'' +
