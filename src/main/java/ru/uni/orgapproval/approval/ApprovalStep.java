@@ -5,7 +5,7 @@ import ru.uni.orgapproval.model.Employee;
 import java.util.Objects;
 
 public class ApprovalStep {
-    private final  ApprovalRule rule;
+    private final ApprovalRule rule;
     private Employee assignedApprover;
     private boolean completed;
 

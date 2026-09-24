@@ -14,5 +14,6 @@ public record ApprovalRecord(
     public ApprovalRecord {
         Objects.requireNonNull(approver, "Согласующий не может быть null");
         Objects.requireNonNull(decisionDate, "Дата решения не может быть null");
+        Objects.requireNonNull(comment, "Комментарий не может быть пустым");
     }
 }

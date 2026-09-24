@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="+ Document и DocumentStatus и там в Department доб методы equals и hashCode">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/DepartmentHeadRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/DirectManagerRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/RoleBasedRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/exception/ApprovalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,25 +110,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.DepartmentTest.testFindManagerAbove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DepartmentTest.testFindManagerAboveNegativeLevelThrowsException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DepartmentTest.testGetAllSubordinates.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOP-task1 [test].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/tasks/OOP-task1/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.DepartmentTest.testFindManagerAbove.executor": "Run",
+    "JUnit.DepartmentTest.testFindManagerAboveNegativeLevelThrowsException.executor": "Run",
+    "JUnit.DepartmentTest.testGetAllSubordinates.executor": "Run",
+    "Maven.OOP-task1 [test].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/tasks/OOP-task1/pom.xml",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.DepartmentTest.testGetAllSubordinates">
+}]]></component>
+  <component name="RunManager" selected="JUnit.DepartmentTest.testFindManagerAbove">
     <configuration name="DepartmentTest.testFindManagerAbove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-task1" />
       <option name="PACKAGE_NAME" value="model" />
@@ -165,8 +161,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentTest.testGetAllSubordinates" />
-        <item itemvalue="JUnit.DepartmentTest.testFindManagerAboveNegativeLevelThrowsException" />
         <item itemvalue="JUnit.DepartmentTest.testFindManagerAbove" />
       </list>
     </recent_temporary>
