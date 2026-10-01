@@ -23,6 +23,7 @@ public final class RoleBasedRule implements ApprovalRule {
     @Override
     public Employee findApprover(Document document) {
         Department dept = document.getAuthor().getDepartment();
+
         if (dept == null) {
             throw new ApprovalException(String.format(
                     "У автора документа '%s' не указано подразделение", document.getAuthor().getFullName()));        }

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="+ Document и DocumentStatus и там в Department доб методы equals и hashCode">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ApprovalTest.java" afterDir="false" />
+    <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="всё?..">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Substitution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/RoleBasedRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/RoleBasedRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Employee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,59 +45,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.000000004844853" />
-      <entry key="S30" value="1.0016921032680917" />
-      <entry key="S60" value="1.0411351874037174" />
-      <entry key="M2" value="1.203101871869752" />
-      <entry key="M5" value="1.7962767424147297" />
-      <entry key="M10" value="5.141261731382469" />
-      <entry key="M15" value="11.364008917288718" />
-      <entry key="M30" value="35.351420217176766" />
-      <entry key="H1" value="75.39254279670811" />
-      <entry key="H2" value="125.3609080110391" />
-      <entry key="H4" value="174.79642496227248" />
-      <entry key="D1" value="245.56498370422776" />
-      <entry key="W1" value="262.08556003624085" />
+      <entry key="S2" value="1.0000029202028113" />
+      <entry key="S5" value="1.0061117447183616" />
+      <entry key="S10" value="1.0781776484673369" />
+      <entry key="S30" value="1.428386584272325" />
+      <entry key="S60" value="1.7588636266233462" />
+      <entry key="M2" value="3.1084429002560667" />
+      <entry key="M5" value="8.010016090497626" />
+      <entry key="M10" value="13.295826966286196" />
+      <entry key="M15" value="17.52209387803079" />
+      <entry key="M30" value="27.6226176407278" />
+      <entry key="H1" value="45.346500985375904" />
+      <entry key="H2" value="85.1453171542821" />
+      <entry key="H4" value="153.0992854487153" />
+      <entry key="D1" value="305.5025179658484" />
+      <entry key="W1" value="350.65600774745" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.9030051401450916E-282" />
-      <entry key="S5" value="3.587600516081229E-113" />
-      <entry key="S10" value="8.689346682431242E-57" />
-      <entry key="S30" value="4.473174743383954E-19" />
-      <entry key="S60" value="1.435618467344467E-9" />
-      <entry key="M2" value="9.168072893244209E-5" />
-      <entry key="M5" value="0.08371629137224279" />
-      <entry key="M10" value="1.135558202308339" />
-      <entry key="M15" value="3.4124562309049944" />
-      <entry key="M30" value="13.183959424753823" />
-      <entry key="H1" value="29.894390360932665" />
-      <entry key="H2" value="48.88678031299308" />
-      <entry key="H4" value="65.58820473252507" />
-      <entry key="D1" value="87.32125040702388" />
-      <entry key="W1" value="92.15461423257393" />
+      <entry key="MS100" value="1.7548787898638326E-120" />
+      <entry key="MS500" value="1.1190596492670702E-24" />
+      <entry key="S2" value="1.0844996034485657E-6" />
+      <entry key="S5" value="0.005282754783487349" />
+      <entry key="S10" value="0.0989008611110085" />
+      <entry key="S30" value="0.7278599252987212" />
+      <entry key="S60" value="1.2538550150731684" />
+      <entry key="M2" value="2.0752267266569033" />
+      <entry key="M5" value="4.069122687562367" />
+      <entry key="M10" value="6.051745159303921" />
+      <entry key="M15" value="7.638134818322934" />
+      <entry key="M30" value="11.34338668641804" />
+      <entry key="H1" value="17.480921321096414" />
+      <entry key="H2" value="31.537751701567963" />
+      <entry key="H4" value="55.373096228503634" />
+      <entry key="D1" value="106.58328728250851" />
+      <entry key="W1" value="121.2988191361886" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.002355093413458517" />
-      <entry key="MS500" value="0.2981272180826579" />
-      <entry key="S2" value="0.7389250793367526" />
-      <entry key="S5" value="0.8860131400544802" />
-      <entry key="S10" value="0.9412827147924357" />
-      <entry key="S30" value="0.9817230774795161" />
-      <entry key="S60" value="1.0310944059748346" />
-      <entry key="M2" value="1.1981454702977041" />
-      <entry key="M5" value="1.8769017067941065" />
-      <entry key="M10" value="6.268407251732923" />
-      <entry key="M15" value="14.76109750803315" />
-      <entry key="M30" value="48.5078653956968" />
-      <entry key="H1" value="105.25717343154187" />
-      <entry key="H2" value="174.2239809576026" />
-      <entry key="H4" value="240.36890867555516" />
-      <entry key="D1" value="332.8827699963465" />
-      <entry key="W1" value="354.2396524389341" />
+      <entry key="MS100" value="0.9330329915368074" />
+      <entry key="MS500" value="0.9862327044933592" />
+      <entry key="S2" value="0.9965432365156511" />
+      <entry key="S5" value="1.008706986395845" />
+      <entry key="S10" value="1.165774418825348" />
+      <entry key="S30" value="2.132019590639941" />
+      <entry key="S60" value="2.989877794766632" />
+      <entry key="M2" value="5.151495434103655" />
+      <entry key="M5" value="12.037186388493618" />
+      <entry key="M10" value="19.31098467918497" />
+      <entry key="M15" value="25.127520713316322" />
+      <entry key="M30" value="38.94039535191757" />
+      <entry key="H1" value="62.80802503558445" />
+      <entry key="H2" value="116.66655679179333" />
+      <entry key="H4" value="208.45848213818246" />
+      <entry key="D1" value="412.08147792154614" />
+      <entry key="W1" value="471.95412616579137" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -213,7 +211,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+ методы findManagerAbove, getAllSubordinates и тесты к ним" />
     <MESSAGE value="+ Document и DocumentStatus и там в Department доб методы equals и hashCode" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Document и DocumentStatus и там в Department доб методы equals и hashCode" />
+    <MESSAGE value="всё?.." />
+    <option name="LAST_COMMIT_MESSAGE" value="всё?.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

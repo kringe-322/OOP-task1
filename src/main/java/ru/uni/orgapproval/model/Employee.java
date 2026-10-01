@@ -1,5 +1,6 @@
 package ru.uni.orgapproval.model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee {
@@ -7,6 +8,7 @@ public class Employee {
     private String fullName;
     private Role role;
     private Department department;
+    private Substitution substitution;
 
     /**
      * Создает нового сотрудника компании.
@@ -45,6 +47,7 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
+    public void setSubstitution(Substitution substitution) {this.substitution = substitution; }
 
     @Override
     public boolean equals(Object obj) {
@@ -53,6 +56,13 @@ public class Employee {
         Employee employee = (Employee) obj;
         return Objects.equals(id,employee.id);
 
+    }
+
+    public Employee getActualApprover(LocalDate date) {
+        if (substitution != null && substitution.isActive(date)) {
+            return substitution.substitute();
+        }
+        return this;
     }
 
     @Override

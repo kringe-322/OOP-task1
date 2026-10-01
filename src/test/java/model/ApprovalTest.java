@@ -12,7 +12,9 @@ import ru.uni.orgapproval.exception.ApprovalException;
 import ru.uni.orgapproval.model.Department;
 import ru.uni.orgapproval.model.Employee;
 import ru.uni.orgapproval.model.Role;
+import ru.uni.orgapproval.model.Substitution;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -175,5 +177,48 @@ public class ApprovalTest {
         // 5. Безопасность при сравнении с null и другим типом
         assertNotEquals(null, emp1);
         assertNotEquals("Строка", emp1);
+    }
+
+    // ТЕСТ 13 (Повышенный уровень): Замещение на время отпуска
+    @Test
+    void testVacationSubstitution() {
+        Document doc = new Document("D-VAC", "Заявка", junior);
+        ApprovalRoute route = new ApprovalRoute(doc, List.of(new DirectManagerRule()));
+
+        // Тимлид уходит в отпуск с 1 по 10 июля, заместитель — Джуниор (или другой сотрудник)
+        LocalDate start = LocalDate.of(2025, 7, 1);
+        LocalDate end = LocalDate.of(2025, 7, 10);
+        lead.setSubstitution(new Substitution(cto, start, end)); // Заместитель — Техдир
+
+        // 1. Пытаемся подписать внутри отпуска (5 июля) настоящим Тимлидом — ошибка, он в отпуске!
+        LocalDate duringVacation = LocalDate.of(2025, 7, 5);
+        assertThrows(ApprovalException.class, () -> {
+            route.approve(lead, duringVacation, "Я из шезлонга подпишу");
+        });
+
+        // 2. А заместитель (Техдир) 5 июля подписывает успешно!
+        assertDoesNotThrow(() -> {
+            route.approve(cto, duringVacation, "Замещаю тимлида");
+        });
+        assertEquals(DocumentStatus.APPROVED, doc.getStatus());
+    }
+    // ТЕСТ 14 (Повышенный уровень): Эскалация на начальника при просрочке дедлайна
+    @Test
+    void testEscalationOnOverdue() {
+        Document doc = new Document("D-ESC", "Срочный сервер", junior);
+        ApprovalRoute route = new ApprovalRoute(doc, List.of(new DirectManagerRule()));
+
+        // По умолчанию согласующий — Тимлид
+        assertEquals(lead, route.getSteps().get(0).getAssignedApprover());
+
+        // Проверяем через 1 день (срок 3 дня еще не вышел) — эскалации нет
+        assertFalse(route.escalateIfOverdue(LocalDate.now().plusDays(1)));
+        assertEquals(lead, route.getSteps().get(0).getAssignedApprover());
+
+        // Проверяем через 5 дней (дедлайн пробит!) — срабатывает эскалация!
+        assertTrue(route.escalateIfOverdue(LocalDate.now().plusDays(5)));
+
+        // Теперь согласующим автоматически стал начальник Тимлида — Техдир!
+        assertEquals(cto, route.getSteps().get(0).getAssignedApprover());
     }
 }

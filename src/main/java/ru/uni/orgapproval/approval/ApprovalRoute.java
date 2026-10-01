@@ -3,6 +3,7 @@ package ru.uni.orgapproval.approval;
 import ru.uni.orgapproval.document.Document;
 import ru.uni.orgapproval.document.DocumentStatus;
 import ru.uni.orgapproval.exception.ApprovalException;
+import ru.uni.orgapproval.model.Department;
 import ru.uni.orgapproval.model.Employee;
 
 import java.time.LocalDate;
@@ -50,28 +51,35 @@ public class ApprovalRoute {
      * @throws ApprovalException если согласование завершено или сотрудник не имеет права подписи
      */
     public void approve(Employee approver, String comment) {
+        approve(approver, LocalDate.now(), comment);
+    }
+
+    public void approve(Employee approver, LocalDate date, String comment) {
         if (isFinished()) {
             throw new ApprovalException("Согласование по документу завершено");
         }
 
         ApprovalStep curStep = steps.get(currentStepIndex);
 
-        if(!curStep.getAssignedApprover().equals(approver)) {
-            throw new ApprovalException("Сотрудник "+ approver.getFullName() + " не имеет права подписывать текущий шаг." +
-                    " Ожидается " + curStep.getAssignedApprover().getFullName());
+        Employee actualExpectedApprover = curStep.getAssignedApprover().getActualApprover(date);
+
+        if (!actualExpectedApprover.equals(approver)) {
+            throw new ApprovalException("Сотрудник " + approver.getFullName() +
+                    " не имеет права подписывать шаг. Ожидается: " + actualExpectedApprover.getFullName());
         }
 
         curStep.setCompleted(true);
-        history.add(new ApprovalRecord(approver, true, LocalDate.now(), comment));
+        history.add(new ApprovalRecord(approver, true, date, comment));
 
         currentStepIndex++;
 
-        if(currentStepIndex >= steps.size()) {
+        if (currentStepIndex < steps.size()) {
+            steps.get(currentStepIndex).setActivatedAt(date);
+        }
+        if (currentStepIndex >= steps.size()) {
             document.setStatus(DocumentStatus.APPROVED);
         }
-
     }
-
     /**
      * Отклоняет документ на текущем шаге.
      *
@@ -95,16 +103,50 @@ public class ApprovalRoute {
         document.setStatus(DocumentStatus.REJECTED);
     }
 
-    /**
-     * Проверяет, завершен ли процесс согласования по документу (успешно или с отклонением).
-     *
-     * @return true, если документ перешел в финальный статус (APPROVED или REJECTED)
-     */
     public boolean isFinished() {
         return document.getStatus() == DocumentStatus.APPROVED ||
                 document.getStatus() == DocumentStatus.REJECTED;
     }
 
+    public boolean escalateIfOverdue(LocalDate currentDate) {
+        if(isFinished()){
+            return false;
+        }
+
+        ApprovalStep curStep = steps.get(currentStepIndex);
+
+        LocalDate deadline = curStep.getActivatedAt().plus(curStep.getDeadline());
+
+        if (currentDate.isAfter(deadline)) {
+            Employee slowApprover = curStep.getAssignedApprover();
+            Department dept = slowApprover.getDepartment();
+
+            if (dept == null) {
+                throw new ApprovalException("Невозможно эскалировать: у согласующего нет отдела");
+            }
+
+            // Ищем начальника на 1 уровень выше того, кто просрочил дедлайн
+            Employee boss = dept.findManagerAbove(1)
+                    .orElseThrow(() -> new ApprovalException("Невозможно эскалировать: вышестоящего руководителя нет"));
+
+            // Переназначаем шаг на начальника!
+            curStep.setAssignedApprover(boss);
+            // Сбрасываем таймер для нового согласующего
+            curStep.setActivatedAt(currentDate);
+
+            // Фиксируем факт эскалации в истории!
+            history.add(new ApprovalRecord(
+                    slowApprover,
+                    false,
+                    currentDate,
+                    "ПРОСРОЧЕНО (дедлайн " + deadline + "). Шаг эскалирован на: " + boss.getFullName()
+            ));
+
+            return true;
+        }
+
+        return false;
+    }
     public Document getDocument() {
         return document;
     }
