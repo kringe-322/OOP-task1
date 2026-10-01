@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02b0dd4c-cacd-44f9-bf5f-191e5dd4115c" name="Changes" comment="+ Document и DocumentStatus и там в Department доб методы equals и hashCode">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ApprovalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/approval/ApprovalRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/uni/orgapproval/model/Employee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,59 +47,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000004423042779" />
-      <entry key="S5" value="1.004781424490269" />
-      <entry key="S10" value="1.1372630996340012" />
-      <entry key="S30" value="2.8727407907889155" />
-      <entry key="S60" value="5.578529736437979" />
-      <entry key="M2" value="9.931968155167512" />
-      <entry key="M5" value="17.611648288811132" />
-      <entry key="M10" value="27.67801589568842" />
-      <entry key="M15" value="38.55985897680647" />
-      <entry key="M30" value="67.19922945449213" />
-      <entry key="H1" value="104.09438758946206" />
-      <entry key="H2" value="146.89412723487584" />
-      <entry key="H4" value="188.5537608906812" />
-      <entry key="D1" value="247.13258240337052" />
-      <entry key="W1" value="260.6263792178872" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.000000004844853" />
+      <entry key="S30" value="1.0016921032680917" />
+      <entry key="S60" value="1.0411351874037174" />
+      <entry key="M2" value="1.203101871869752" />
+      <entry key="M5" value="1.7962767424147297" />
+      <entry key="M10" value="5.141261731382469" />
+      <entry key="M15" value="11.364008917288718" />
+      <entry key="M30" value="35.351420217176766" />
+      <entry key="H1" value="75.39254279670811" />
+      <entry key="H2" value="125.3609080110391" />
+      <entry key="H4" value="174.79642496227248" />
+      <entry key="D1" value="245.56498370422776" />
+      <entry key="W1" value="262.08556003624085" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.1125495514186904E-181" />
-      <entry key="MS500" value="7.485302983853369E-37" />
-      <entry key="S2" value="1.2795860967869233E-9" />
-      <entry key="S5" value="4.097252802447375E-4" />
-      <entry key="S10" value="0.029365098798752577" />
-      <entry key="S30" value="0.6712701126859347" />
-      <entry key="S60" value="1.7586513911443094" />
-      <entry key="M2" value="3.208842635357115" />
-      <entry key="M5" value="5.500955422096103" />
-      <entry key="M10" value="9.20499317789786" />
-      <entry key="M15" value="13.770291630463355" />
-      <entry key="M30" value="26.484018457406503" />
-      <entry key="H1" value="42.37002432163906" />
-      <entry key="H2" value="58.20039625936145" />
-      <entry key="H4" value="71.56373463786953" />
-      <entry key="D1" value="88.59947630256305" />
-      <entry key="W1" value="92.34612719042055" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.9030051401450916E-282" />
+      <entry key="S5" value="3.587600516081229E-113" />
+      <entry key="S10" value="8.689346682431242E-57" />
+      <entry key="S30" value="4.473174743383954E-19" />
+      <entry key="S60" value="1.435618467344467E-9" />
+      <entry key="M2" value="9.168072893244209E-5" />
+      <entry key="M5" value="0.08371629137224279" />
+      <entry key="M10" value="1.135558202308339" />
+      <entry key="M15" value="3.4124562309049944" />
+      <entry key="M30" value="13.183959424753823" />
+      <entry key="H1" value="29.894390360932665" />
+      <entry key="H2" value="48.88678031299308" />
+      <entry key="H4" value="65.58820473252507" />
+      <entry key="D1" value="87.32125040702388" />
+      <entry key="W1" value="92.15461423257393" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4367186937943844E-17" />
-      <entry key="MS500" value="4.280301373613453E-4" />
-      <entry key="S2" value="0.14383657723977783" />
-      <entry key="S5" value="0.46466352353805385" />
-      <entry key="S10" value="0.8321823124873412" />
-      <entry key="S30" value="3.3683637751577584" />
-      <entry key="S60" value="7.206933106673205" />
-      <entry key="M2" value="13.039305864902143" />
-      <entry key="M5" value="23.04292306026902" />
-      <entry key="M10" value="36.82307433798099" />
-      <entry key="M15" value="52.270882431865594" />
-      <entry key="M30" value="93.6286613666865" />
-      <entry key="H1" value="146.42247432881211" />
-      <entry key="H2" value="205.06640104497427" />
-      <entry key="H4" value="260.10038874125155" />
-      <entry key="D1" value="335.72855109437927" />
-      <entry key="W1" value="352.9719845115048" />
+      <entry key="MS100" value="0.002355093413458517" />
+      <entry key="MS500" value="0.2981272180826579" />
+      <entry key="S2" value="0.7389250793367526" />
+      <entry key="S5" value="0.8860131400544802" />
+      <entry key="S10" value="0.9412827147924357" />
+      <entry key="S30" value="0.9817230774795161" />
+      <entry key="S60" value="1.0310944059748346" />
+      <entry key="M2" value="1.1981454702977041" />
+      <entry key="M5" value="1.8769017067941065" />
+      <entry key="M10" value="6.268407251732923" />
+      <entry key="M15" value="14.76109750803315" />
+      <entry key="M30" value="48.5078653956968" />
+      <entry key="H1" value="105.25717343154187" />
+      <entry key="H2" value="174.2239809576026" />
+      <entry key="H4" value="240.36890867555516" />
+      <entry key="D1" value="332.8827699963465" />
+      <entry key="W1" value="354.2396524389341" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -112,9 +116,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.ApprovalTest.executor": "Run",
+    "JUnit.ApprovalTest.testApprovalRouteHappyPath.executor": "Run",
+    "JUnit.ApprovalTest.testDirectManagerForDepartmentHeadEscalates.executor": "Run",
+    "JUnit.ApprovalTest.testDirectManagerForRegularEmployee.executor": "Run",
+    "JUnit.ApprovalTest.testRoleBasedRuleFindsAccountant.executor": "Run",
+    "JUnit.ApprovalTest.testRoleBasedRuleNotFoundThrowsException.executor": "Run",
     "JUnit.DepartmentTest.testFindManagerAbove.executor": "Run",
     "JUnit.DepartmentTest.testFindManagerAboveNegativeLevelThrowsException.executor": "Run",
     "JUnit.DepartmentTest.testGetAllSubordinates.executor": "Run",
+    "JUnit.model in OOP-task1.executor": "Run",
+    "Maven.OOP-task1 [clean,test].executor": "Run",
+    "Maven.OOP-task1 [compile,exec:java...].executor": "Run",
     "Maven.OOP-task1 [test].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -128,40 +142,61 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DepartmentTest.testFindManagerAbove">
-    <configuration name="DepartmentTest.testFindManagerAbove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.model in OOP-task1">
+    <configuration name="ApprovalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-task1" />
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DepartmentTest" />
-      <option name="METHOD_NAME" value="testFindManagerAbove" />
+      <option name="MAIN_CLASS_NAME" value="model.ApprovalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApprovalTest.testApprovalRouteHappyPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP-task1" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ApprovalTest" />
+      <option name="METHOD_NAME" value="testApprovalRouteHappyPath" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentTest.testFindManagerAboveNegativeLevelThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApprovalTest.testDirectManagerForDepartmentHeadEscalates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-task1" />
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DepartmentTest" />
-      <option name="METHOD_NAME" value="testFindManagerAboveNegativeLevelThrowsException" />
+      <option name="MAIN_CLASS_NAME" value="model.ApprovalTest" />
+      <option name="METHOD_NAME" value="testDirectManagerForDepartmentHeadEscalates" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentTest.testGetAllSubordinates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApprovalTest.testDirectManagerForRegularEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP-task1" />
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.DepartmentTest" />
-      <option name="METHOD_NAME" value="testGetAllSubordinates" />
+      <option name="MAIN_CLASS_NAME" value="model.ApprovalTest" />
+      <option name="METHOD_NAME" value="testDirectManagerForRegularEmployee" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="model in OOP-task1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP-task1" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/model" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentTest.testFindManagerAbove" />
+        <item itemvalue="JUnit.model in OOP-task1" />
+        <item itemvalue="JUnit.ApprovalTest" />
+        <item itemvalue="JUnit.ApprovalTest.testApprovalRouteHappyPath" />
+        <item itemvalue="JUnit.ApprovalTest.testDirectManagerForRegularEmployee" />
+        <item itemvalue="JUnit.ApprovalTest.testDirectManagerForDepartmentHeadEscalates" />
       </list>
     </recent_temporary>
   </component>

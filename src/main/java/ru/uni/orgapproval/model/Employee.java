@@ -8,6 +8,14 @@ public class Employee {
     private Role role;
     private Department department;
 
+    /**
+     * Создает нового сотрудника компании.
+     *
+     * @param id уникальный табельный номер / идентификатор сотрудника
+     * @param fullName полное имя сотрудника
+     * @param role функциональная роль (должность)
+     * @param department подразделение, в котором числится сотрудник
+     */
     public Employee(String id, String fullName, Role role,Department department){
         this.id= Objects.requireNonNull(id, "ID не может быть null");
         this.fullName= Objects.requireNonNull(fullName, "fullname не может быть null");

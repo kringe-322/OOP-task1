@@ -12,6 +12,13 @@ public class Document {
     private final LocalDate creationDate;
     private DocumentStatus status;
 
+    /**
+     * Создает новый документ в системе.
+     *
+     * @param id уникальный идентификационный номер документа
+     * @param title заголовок (название) документа
+     * @param author автор документа
+     */
     public Document(String id, String title, Employee author) {
         this.id = Objects.requireNonNull(id, "id не может быть null");
         this.title = Objects.requireNonNull(title, "title не может быть null");

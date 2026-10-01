@@ -17,6 +17,13 @@ public class ApprovalRoute {
     private final List<ApprovalRecord> history= new ArrayList<>();
     private int currentStepIndex=0;
 
+    /**
+     * Формирует маршрут согласования для документа на основе переданного списка правил.
+     *
+     * @param document согласуемый документ
+     * @param rules упорядоченный список правил выбора согласующих
+     * @throws IllegalArgumentException если список правил пуст
+     */
     public ApprovalRoute(Document document, List<ApprovalRule> rules) {
         this.document = Objects.requireNonNull(document, "Document must not be null");
 
@@ -35,6 +42,13 @@ public class ApprovalRoute {
         this.document.setStatus(DocumentStatus.UNDER_PROCESSING);
     }
 
+    /**
+     * Согласует текущий шаг маршрута от имени указанного сотрудника.
+     *
+     * @param approver сотрудник, согласующий шаг
+     * @param comment комментарий к согласованию
+     * @throws ApprovalException если согласование завершено или сотрудник не имеет права подписи
+     */
     public void approve(Employee approver, String comment) {
         if (isFinished()) {
             throw new ApprovalException("Согласование по документу завершено");
@@ -58,6 +72,13 @@ public class ApprovalRoute {
 
     }
 
+    /**
+     * Отклоняет документ на текущем шаге.
+     *
+     * @param approver сотрудник, отклоняющий шаг
+     * @param comment причина отклонения
+     * @throws ApprovalException если согласование завершено или сотрудник не имеет права подписи
+     */
     public void reject(Employee approver, String comment) {
         if(isFinished()){
             throw new ApprovalException("Согласование по документу завершено");
@@ -74,6 +95,11 @@ public class ApprovalRoute {
         document.setStatus(DocumentStatus.REJECTED);
     }
 
+    /**
+     * Проверяет, завершен ли процесс согласования по документу (успешно или с отклонением).
+     *
+     * @return true, если документ перешел в финальный статус (APPROVED или REJECTED)
+     */
     public boolean isFinished() {
         return document.getStatus() == DocumentStatus.APPROVED ||
                 document.getStatus() == DocumentStatus.REJECTED;

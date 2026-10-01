@@ -9,6 +9,12 @@ public class Department {
     private Department parent;
     private final List<Department> children;
 
+    /**
+     * Создает новое подразделение с указанным именем и родительским отделом.
+     *
+     * @param name название подразделения (не null)
+     * @param parent родительское подразделение (может быть null для корня компании)
+     */
     public Department(String name, Department parent){
         this.name = Objects.requireNonNull(name, "name не может быть null");
         this.parent = parent;
@@ -51,6 +57,11 @@ public class Department {
         this.parent = parent;
     }
 
+    /**
+     * Добавляет сотрудника в подразделение и устанавливает двустороннюю связь.
+     *
+     * @param employee добавляемый сотрудник (не null)
+     */
     public void addEmployee(Employee employee){
         Objects.requireNonNull(employee, "employee не может быть null");
         employees.add(employee);
@@ -84,6 +95,13 @@ public class Department {
                 '}';
     }
 
+    /**
+     * Выполняет поиск руководителя на указанное количество уровней вверх по дереву.
+     *
+     * @param levelsUp количество уровней иерархии для подъема (0 - текущий отдел)
+     * @return Optional с найденным руководителем либо Optional.empty(), если уровень выше корня
+     * @throws IllegalArgumentException если передан отрицательный уровень
+     */
     public Optional<Employee> findManagerAbove(int levelsUp){
         if (levelsUp < 0) {
             throw new IllegalArgumentException("Уровень не может быть отрицательным: " + levelsUp);
@@ -102,6 +120,11 @@ public class Department {
         return Optional.ofNullable(cur.getHead());
     }
 
+    /**
+     * Рекурсивно собирает всех сотрудников текущего подразделения и всех его дочерних отделов вглубь.
+     *
+     * @return неизменяемый список всех сотрудников в поддереве
+     */
     public List<Employee> getAllSubordinates() {
         List<Employee> subordinates = new ArrayList<>();
             subordinates.addAll(employees);
